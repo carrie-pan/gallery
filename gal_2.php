@@ -139,7 +139,7 @@ table {
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				function display_large_pic(pic_link)
+				function display_large_pic( pic_link )
 				{
 					$('#large_img').attr('src',pic_link);
 				}
@@ -147,7 +147,7 @@ table {
 					var link = $(this).attr('src');
 					$('.selected').removeClass('selected');
 					$(this).parent().find('img').attr('class', 's_img selected');
-					$('#large_img').attr('src',link);
+					display_large_pic(link);
 				});
 				$('#btn_next').click(function(){
 					var li_pos = $('ul#gal_list li img').index($('.selected'));
@@ -163,7 +163,8 @@ table {
 						$('.selected').removeClass('selected').parents().find('li:first img').attr('class','s_img selected');
 					}
 					/* 取得最後得到的pic */
-					var pic=$('.selected').find('img').attr('src');
+					//var pic = $('.selected').find('img').attr('src');
+					var pic = $('.selected').attr('src');
 					display_large_pic(pic);
 				});
 				$('#btn_pre').click(function(){
@@ -179,7 +180,8 @@ table {
 						$('.selected').removeClass('selected').parents().find('li:last img').attr('class','s_img selected');
 					}
 					/* 取得最後得到的pic */
-					var pic=$('.selected').find('img').attr('src');
+					// var pic=$('.selected').find('img').attr('src');
+					var pic=$('.selected')..attr('src');
 					display_large_pic(pic);
 				});
 				
